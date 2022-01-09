@@ -1,30 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav>
+    <div class="bg-indigo-600">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between">
+          <div class="fex space-x-4">
+            <div class="flex items-center space-x-1">
+              <router-link class="py-5 px-2 text-indigo-200 hover:text-indigo-400" to="/">Inicio</router-link>
+              <router-link class="py-5 px-2 text-indigo-200 hover:text-indigo-400" to="/medicinas">Medicinas</router-link>
+              <router-link class="py-5 px-2 text-indigo-200 hover:text-indigo-400" to="/promociones">Promociones</router-link>
+              <router-link class="py-5 px-2 text-indigo-200 hover:text-indigo-400" to="/facturas">Facturas</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="mx-5 mt-5">
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+nav div div div div div a.router-link-exact-active {
+  color: #ffffff;
 }
 </style>

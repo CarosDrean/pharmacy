@@ -200,7 +200,7 @@ export default {
             this.getMedicines()
           })
           .catch((err) => {
-            this.$data.toastError = ref(true)
+            this.toastError = ref(true)
             console.log(err)
           });
     }

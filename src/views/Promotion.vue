@@ -76,13 +76,13 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span
                       class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    {{ promotion.start_date }}
+                    {{ $filters.formatDate(promotion.start_date) }}
                   </span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span
                       class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    {{ promotion.finish_date }}
+                    {{ $filters.formatDate(promotion.finish_date) }}
                   </span>
                 </td>
               </tr>
@@ -211,7 +211,7 @@ export default {
 
     async save() {
       this.promotion.start_date = this.promotion.start_date + 'T00:00:00Z'
-      this.promotion.finish_date = this.promotion.finish_date + 'T00:00:00Z'
+      this.promotion.finish_date = this.promotion.finish_date + 'T23:59:59Z'
 
       axios.post(`${process.env.VUE_APP_API}/v1/promotion`, this.promotion)
           .then((response) => {
@@ -220,7 +220,7 @@ export default {
             this.getPromotions()
           })
           .catch((err) => {
-            this.$data.toastError = ref(true)
+            this.toastError = ref(true)
             console.log(err)
           });
     }
